@@ -28,6 +28,7 @@ dtbo-$(CONFIG_ARCH_OMAP2PLUS) += \
 	BB-UART1-00A0.dtbo	\
 	BB-UART2-00A0.dtbo	\
 	BB-UART4-00A0.dtbo	\
+	BB-UART5-00A0.dtbo	\
 	BBORG_COMMS-00A2.dtbo	\
 	BBORG_FAN-A000.dtbo	\
 	BBORG_RELAY-00A2.dtbo	\
@@ -35,6 +36,7 @@ dtbo-$(CONFIG_ARCH_OMAP2PLUS) += \
 	DLPDLCR2000-00A0.dtbo	\
 	LED_P8_03.dtbo	\
 	LED_P8_04.dtbo	\
+	PPS_P8_07.dtbo	\
 	M-BB-BBG-00A0.dtbo	\
 	M-BB-BBGG-00A0.dtbo	\
 	PB-HACKADAY-2021.dtbo	\
