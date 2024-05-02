@@ -16,7 +16,7 @@
   pps_p8_07_pins: pinmux_pps_p8_07_pins {
     pinctrl-single, pins = < AM33XX_PADCONF(AM335X_PIN_TIMER4, PIN_INPUT, MUX_MODE0) >
     }
-}
+};
 
 &pps {
     status = "okay";
@@ -24,5 +24,5 @@
     pin-ctrl-names = "default";
     pin-ctrl-0 = <&pps_p8_07_pins>;
     gpios = <&gpio2 2 GPIO_ACTIVE_HIGH>;
-}
+};
 
