@@ -1,0 +1,28 @@
+/dts-v1/;
+/plugin/;
+
+&{/chosen} {
+	overlays {
+		PPS_P8_07.kernel = __TIMESTAMP__;
+	};
+};
+
+&ocp {
+  P8_07_pinmux { status="disabled" }; /* P8_07: timer4 */
+};
+
+
+&am33x_pinmux {
+  pps_p8_07_pins: pinmux_pps_p8_07_pins {
+    pinctrl-single, pins = < AM33XX_PADCONF(AM335X_PIN_TIMER4, PIN_INPUT, MUX_MODE0) >
+    }
+}
+
+&pps {
+    status = "okay";
+    compatible="pps-gpio";
+    pin-ctrl-names = "default";
+    pin-ctrl-0 = <&pps_p8_07_pins>;
+    gpios = <&gpio2 2 GPIO_ACTIVE_HIGH>;
+}
+
