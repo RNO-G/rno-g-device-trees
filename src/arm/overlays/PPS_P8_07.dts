@@ -15,7 +15,7 @@
 &am33x_pinmux {
   pps_p8_07_pins: pinmux_pps_p8_07_pins {
     pinctrl-single,pins = <
-     AM33XX_PADCONF(AM335X_PIN_TIMER4, PIN_INPUT, MUX_MODE0)
+     AM33XX_PADCONF(AM335X_PIN_ADVN_ALE, PIN_INPUT, MUX_MODE0)
     >;
   };
 };
