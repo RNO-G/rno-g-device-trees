@@ -1,6 +1,8 @@
 /dts-v1/;
 /plugin/;
 
+#include <dt-bindings/pinctrl/am33xx.h>
+
 &{/chosen} {
 	overlays {
 		PPS_P8_07.kernel = __TIMESTAMP__;
@@ -12,10 +14,10 @@
 };
 
 
-&am33x_pinmux {
+&am33xx_pinmux {
   pps_p8_07_pins: pinmux_pps_p8_07_pins {
     pinctrl-single,pins = <
-     AM33XX_PADCONF(AM335X_PIN_ADVN_ALE, PIN_INPUT, MUX_MODE0)
+     AM33XX_PADCONF(AM335X_PIN_GPMC_ADVN_ALE, PIN_INPUT, MUX_MODE0) 
     >;
   };
 };
@@ -23,8 +25,8 @@
 &pps {
     status = "okay";
     compatible="pps-gpio";
-    pin-ctrl-names = "default";
-    pin-ctrl-0 = <&pps_p8_07_pins>;
-    gpios = <&gpio2 2 GPIO_ACTIVE_HIGH>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&pps_p8_07_pins>;
+    gpios = <&gpio2 2 0>;
 };
 
