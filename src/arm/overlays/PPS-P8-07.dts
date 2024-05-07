@@ -1,0 +1,32 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/pinctrl/am33xx.h>
+#include <dt-bindings/gpio/gpio.h>
+
+
+/*
+* Helper to show loaded overlays under: /proc/device-tree/chosen/overlays/
+*/
+&{/chosen} {
+  overlays {
+			PPS-P8-07.kernel = __TIMESTAMP__;
+	};
+};
+ /*
+ * Free up the pins used by the cape from the pinmux helpers.
+ */
+&ocp
+{
+			P8_07_pinmux { status = "disabled"; };	/* p8_07 - pulse */
+};
+
+
+
+&pps {
+  status = "okay";
+  compatible="pps-gpio";
+  pinctrl-names = "default";
+  pinctrl-0 = <&P8_07_gpio_pin>;
+  gpios = <&gpio2 2 0>;
+};
